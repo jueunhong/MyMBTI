@@ -6,12 +6,9 @@ import styled from "styled-components";
 
 
 
-const BottomSheet = () => {
-  const [closeBottom, setCloseBottom] = useState(false);
-  const onClick = () => {
-    setCloseBottom(prev => !prev)
-    
-  }; 
+const BottomSheet = ({closeBottom}) => {
+  
+  const onClick = () => closeBottom();
 
 return(
     <>
@@ -19,10 +16,8 @@ return(
       <StyledBottomSheet>
         <StyledBottomSheetHeader>
           <div>
-            <input
-                type="text"
-                placeholder="성을 입력해주세요."/>
-            <span onClick={onClick}>x</span>
+            <span>성을 입력해주세요.</span>
+            <span onClick={onClick}>X</span>
           </div>
         </StyledBottomSheetHeader>
       </StyledBottomSheet>
@@ -34,12 +29,13 @@ return(
 const HomeForm = () => {
     const [isBottomOpen, setIsBottomOpen] = useState(false);
     const onClick = () => setIsBottomOpen(prev => !prev);
-    
+    const closeBottom = () => setIsBottomOpen(prev => !prev);
+
     return(
         <div className={styles.Container}>
             <h3>성을 입력해주세요.</h3>
             <button onClick={onClick}></button>
-            {isBottomOpen && <BottomSheet/>}
+            {isBottomOpen && <BottomSheet closeBottom={closeBottom}/>}
         </div>
     )
 }
@@ -50,22 +46,23 @@ export default HomeForm;
 
 
 const StyledModalBackground = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;;
   opacity: 0.5;
-  background-color: gray;
-  z-index: 1;
+  background-color: black;
+  z-index:1;
 `;
 
 const StyledBottomSheet = styled.div`
   z-index: 2;
-  position: absolute;
+  position: fixed;
+  top: 30.1rem;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   bottom: 0;
   border-radius: 1rem 1rem 0 0;
   background-color: white;
