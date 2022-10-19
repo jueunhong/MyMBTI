@@ -7,13 +7,14 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background-color:bisque;
+    background-color:rgb(255, 227, 193);
     
 }
 
 .Container h2{
     /* padding-top: 80px; */
     text-align: center;
+    font-family: "pretendard-extrabold";
 }
 
 .Container img {
@@ -26,4 +27,14 @@ button {
     background-color: aquamarine;
     border-radius: 10px;
     padding: 10px 100px;
+    cursor: pointer;
+}
+
+button span {
+    font-family: "pretendard-extrabold";
+}
+
+@font-face {
+    font-family: "pretendard-extrabold";
+    src: url(../assets/fonts/Pretendard-ExtraBold.ttf);
 }

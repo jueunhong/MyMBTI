@@ -15,7 +15,7 @@ const Home = () => {
                  <img src={MainImage} width={390} height={350} alt="" />
                  <button 
                     className={styles.startBtn}
-                    onClick={onClick}>시작하기</button>
+                    onClick={onClick}><span>시작하기</span></button>
                 </div>)
         } else{
             return <HomeForm/>}
