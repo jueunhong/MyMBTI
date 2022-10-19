@@ -6,9 +6,18 @@ import styled from "styled-components";
 
 
 
-const BottomSheet = ({closeBottom}) => {
+const BottomSheet = ({closeBottom, getGender}) => {
   
-  const onClick = () => closeBottom();
+  const onClick = () => {
+    closeBottom();
+  }
+
+  const onClickLi = (event) => {
+    closeBottom();
+    getGender(event.target.innerText);
+  }
+
+  
 
 return(
     <>
@@ -16,10 +25,17 @@ return(
       <StyledBottomSheet>
         <StyledBottomSheetHeader>
           <div>
-            <span>성을 입력해주세요.</span>
-            <span onClick={onClick}>X</span>
+            <p>성별을 선택해주세요.</p>
           </div>
+          <span onClick={onClick}>X</span>
         </StyledBottomSheetHeader>
+        <form>
+          <ul>
+            <li onClick={onClickLi}>여자</li>
+            <li onClick={onClickLi}>남자</li>
+            <li onClick={onClickLi}>관계없음</li>
+          </ul>
+        </form>
       </StyledBottomSheet>
     </>
 )
@@ -30,12 +46,19 @@ const HomeForm = () => {
     const [isBottomOpen, setIsBottomOpen] = useState(false);
     const onClick = () => setIsBottomOpen(prev => !prev);
     const closeBottom = () => setIsBottomOpen(prev => !prev);
+    const [gender, setGender] = useState("");
+    const getGender = (event) => setGender(prev=> event);
+    
 
     return(
         <div className={styles.Container}>
-            <h3>성을 입력해주세요.</h3>
-            <button onClick={onClick}></button>
-            {isBottomOpen && <BottomSheet closeBottom={closeBottom}/>}
+            <h3>성별을 선택해주세요.</h3>
+            <input 
+              type="text"
+              placeholder="성별"
+              value={gender}
+              onClick={onClick}></input>
+            {isBottomOpen && <BottomSheet closeBottom={closeBottom} getGender={getGender}/>}
         </div>
     )
 }
@@ -66,6 +89,14 @@ const StyledBottomSheet = styled.div`
   bottom: 0;
   border-radius: 1rem 1rem 0 0;
   background-color: white;
+  animation-duration: 2s;
+  animation-name: slidein;
+  & > form> ul {
+    list-style: none;
+  }
+  & > form > ul > li {
+    cursor: pointer;
+  }
 `;
 
 const StyledBottomSheetHeader = styled.div`
@@ -76,10 +107,19 @@ const StyledBottomSheetHeader = styled.div`
   border-bottom: 0.1rem;
   & > div {
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.7rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  & > span {
+    font-weight: 600;
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    cursor: pointer;
+
   }
 `;
