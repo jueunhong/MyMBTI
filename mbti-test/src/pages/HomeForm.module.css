@@ -10,3 +10,27 @@
     background-color:rgb(255, 227, 193);
     
 }
+
+
+.formInput {
+    border: none;
+    border-radius: 20px;
+    padding: 20px 20px;
+    cursor: pointer;
+    margin: 50px 0 30px 0;
+    font-family: "pretendard-extrabold";
+    font-size: 12px;
+}
+
+h3{
+    font-family: "pretendard-extrabold";
+    font-size: 20px;
+}
+
+ul {
+    font-family: "pretendard-medium";
+}
+
+ul li {
+    padding: 15px;
+}

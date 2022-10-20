@@ -5,14 +5,11 @@
 @font-face {
     font-family: "pretendard-extrabold";
     src: url(./assets/fonts/Pretendard-ExtraBold.ttf);
-}
 
-@font-face {
     font-family: "pretendard-light";
     src: url(./assets/fonts/Pretendard-Light.ttf);
-}
 
-@font-face {
     font-family: "pretendard-medium";
     src: url(./assets/fonts/Pretendard-Medium.ttf);
-}
+};
+

@@ -26,7 +26,7 @@ return(
       <StyledBottomSheet>
         <StyledBottomSheetHeader>
           <div>
-            <p>성별을 선택해주세요.</p>
+            <h3>성별을 선택해주세요.</h3>
           </div>
           <span onClick={onClick}>X</span>
         </StyledBottomSheetHeader>
@@ -57,7 +57,8 @@ const HomeForm = () => {
     return(
         <div className={styles.Container}>
             <h3>성별을 선택해주세요.</h3>
-            <input 
+            <input
+              className={styles.formInput}
               type="text"
               placeholder="성별"
               value={gender}
@@ -86,6 +87,8 @@ const StyledModalBackground = styled.div`
   z-index:1;
 `;
 
+
+
 const StyledBottomSheet = styled.div`
   z-index: 2;
   position: fixed;
@@ -103,6 +106,7 @@ const StyledBottomSheet = styled.div`
   & > form > ul > li {
     cursor: pointer;
   }
+
 `;
 
 const StyledBottomSheetHeader = styled.div`
@@ -120,6 +124,7 @@ const StyledBottomSheetHeader = styled.div`
     transform: translateX(-50%);
   }
 
+
   & > span {
     font-weight: 600;
     position: absolute;
@@ -128,4 +133,5 @@ const StyledBottomSheetHeader = styled.div`
     cursor: pointer;
 
   }
+
 `;
