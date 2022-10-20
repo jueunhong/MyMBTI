@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styles from "./Home.module.css";
 import styled from "styled-components";
+import styles from "./HomeForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -48,6 +49,9 @@ const HomeForm = () => {
     const closeBottom = () => setIsBottomOpen(prev => !prev);
     const [gender, setGender] = useState("");
     const getGender = (event) => setGender(prev=> event);
+    const navigate = useNavigate();
+    const goToTest = () => navigate("/Test");
+ 
     
 
     return(
@@ -59,7 +63,9 @@ const HomeForm = () => {
               value={gender}
               onClick={onClick}></input>
             {isBottomOpen && <BottomSheet closeBottom={closeBottom} getGender={getGender}/>}
+            {gender !== "" ? <button  onClick={goToTest}><span>다음</span></button> : null}
         </div>
+        
     )
 }
 
