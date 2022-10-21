@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import styles from "./HomeForm.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -87,7 +87,15 @@ const StyledModalBackground = styled.div`
   z-index:1;
 `;
 
-
+const slidein = keyframes`
+  from {
+    top: 100%;
+  }
+  to {
+    top: 30.1rem;
+  }
+  
+`;
 
 const StyledBottomSheet = styled.div`
   z-index: 2;
@@ -98,8 +106,7 @@ const StyledBottomSheet = styled.div`
   bottom: 0;
   border-radius: 1rem 1rem 0 0;
   background-color: white;
-  animation-duration: 2s;
-  animation-name: slidein;
+  animation: ${slidein} 1s 0s;
   & > form> ul {
     list-style: none;
   }
@@ -108,6 +115,8 @@ const StyledBottomSheet = styled.div`
   }
 
 `;
+
+
 
 const StyledBottomSheetHeader = styled.div`
   height: 4.4rem;
