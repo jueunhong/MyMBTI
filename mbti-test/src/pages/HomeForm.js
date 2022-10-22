@@ -92,7 +92,7 @@ const slidein = keyframes`
     top: 100%;
   }
   to {
-    top: 30.1rem;
+    top: 55%;
   }
   
 `;
@@ -100,7 +100,7 @@ const slidein = keyframes`
 const StyledBottomSheet = styled.div`
   z-index: 2;
   position: fixed;
-  top: 30.1rem;
+  top: 55%;
   width: 100%;
   height: 100%;
   bottom: 0;
