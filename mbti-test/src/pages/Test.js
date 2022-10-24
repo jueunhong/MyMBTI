@@ -18,14 +18,18 @@ const Test = () => {
         }
         };
 
+    const answerClick = () => {
+        onClick();
+    };
+
     return(
         <div className={styles.Container}>
           {qna &&
           <>
-            <div>{question}</div>
-            <div>
-                <ul>
-                    {answer.map(a => <li key={a}>{a}</li>)}
+            <h3 className={styles.question}>{question}</h3>
+            <div className={styles.answerContainer}>
+                <ul className={styles.answerList}>
+                    {answer.map(a => <li key={a} onClick={answerClick} className={styles.answer}><span>{a}</span></li>)}
                 </ul>
                 
             </div>

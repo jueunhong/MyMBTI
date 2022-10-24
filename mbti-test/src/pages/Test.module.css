@@ -11,7 +11,38 @@
     
 }
 
-ul {
-    list-style: none;
+.question {
+    position: fixed;
+    text-align: center;
+    top: 15%;
+    width: 80%;
+    font-size: 18px;
 }
 
+
+.answerList {
+    list-style: none;
+    padding-left: 0;
+    
+}
+
+.answer {
+    cursor: pointer;
+    background-color: aliceblue;
+    margin-bottom: 14px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 300px;
+}
+
+.answer:hover {
+    background-color: aquamarine;
+}
+
+.answer:first-child {
+    margin-top: 40px;
+}
+
+.answer:last-child {
+    margin-bottom: 50px;
+}
