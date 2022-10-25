@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Test = () => {
     const [question, setQuestion] = useState(qna[0].q);
     const [answer, setAnswer] = useState([qna[0].a[0].answer, qna[0].a[1].answer, qna[0].a[2].answer]);
+    const [answerResult, setAnswerResult] = useState([]);    
     const [num, setNum] = useState(1);
     const navigate = useNavigate();
     const onClick = () => {
@@ -14,13 +15,18 @@ const Test = () => {
         } else{
             setNum(prev => prev+1);
             setQuestion(qna[num].q);
-            setAnswer([qna[num].a[0].answer, qna[num].a[1].answer, qna[num].a[2].answer])
+            setAnswer([qna[num].a[0].answer, qna[num].a[1].answer, qna[num].a[2].answer]); 
         }
         };
 
-    const answerClick = () => {
+    const answerClick = (event) => {
+        var id = event.target.id;
+        setAnswerResult(qna[num].a[id].type);
+        setAnswerResult(prev => [...prev, ...qna[num].a[id].type]);
         onClick();
     };
+    
+
 
     return(
         <div className={styles.Container}>
@@ -29,7 +35,7 @@ const Test = () => {
             <h3 className={styles.question}>{question}</h3>
             <div className={styles.answerContainer}>
                 <ul className={styles.answerList}>
-                    {answer.map(a => <li key={a} onClick={answerClick} className={styles.answer}><span>{a}</span></li>)}
+                    {answer.map((a, index) => <li key={a} id={index} onClick={answerClick} className={styles.answer}>{a}</li>)}
                 </ul>
                 
             </div>
