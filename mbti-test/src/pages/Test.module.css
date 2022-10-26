@@ -7,7 +7,7 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background-color:rgb(255, 227, 193);
+    background-color:rgb(255, 220, 235);
     
 }
 
@@ -28,7 +28,7 @@
 
 .answer {
     cursor: pointer;
-    background-color: aliceblue;
+    background-color: rgb(219, 253, 242);
     margin-bottom: 14px;
     border-radius: 15px;
     width: 90%;
@@ -36,7 +36,7 @@
 }
 
 .answer:hover {
-    background-color: aquamarine;
+    background-color: rgb(151, 255, 220);
 }
 
 .answer:first-child {

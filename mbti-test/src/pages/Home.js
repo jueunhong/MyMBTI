@@ -11,7 +11,7 @@ const Home = () => {
     
     if(start === false){
         return (<div className={styles.Container}>
-                 <h2>십이간지로 알아보는 연애유형</h2>
+                 <h2>십이간지 <h1>동물</h1>로 알아보는 연애유형</h2>
                  <img src={MainImage} width={390} height={350} alt="" />
                  <button 
                     className={styles.startBtn}
