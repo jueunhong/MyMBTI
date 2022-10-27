@@ -11,7 +11,10 @@ const Test = () => {
     const [answerResult, setAnswerResult] = useState([]);    
     const [num, setNum] = useState(1);
     const navigate = useNavigate();
-   
+    const goToResultPage = () => {
+        navigate("/Result")
+    }
+    
 
     const answerClick = (event) => {
         
@@ -32,7 +35,13 @@ const Test = () => {
 
     return(
         <>
-        {num === 12 ? <Result totalType={answerResult}/> : 
+        {num === 12 ? 
+            ( <div className={styles.Container}>
+                <h2 className={styles.goToResult}>결과보러 가기!</h2>
+                <button onClick={() =>{
+                    goToResultPage();
+                    }}><span>확인</span></button>
+            </div>) : 
         (
             <div className={styles.Container}>
             {qna &&
