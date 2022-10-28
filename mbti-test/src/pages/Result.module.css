@@ -10,3 +10,22 @@
     
 }
 
+
+.Title {text-align: center;
+        font-family: "pretendard-extrabold";
+        position: fixed;
+        top: 15%;
+        }
+
+.name {
+    font-family: "pretendard-extrabold";
+    position: fixed;
+    top: 20%;
+}
+
+.desc {
+    font-family: "pretendard-medium";
+    padding: 0 5%;
+    margin-top: 8%;
+    line-height: 27px;
+}

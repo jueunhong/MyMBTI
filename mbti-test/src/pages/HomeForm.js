@@ -48,7 +48,7 @@ const HomeForm = () => {
     const onClick = () => setIsBottomOpen(prev => !prev);
     const closeBottom = () => setIsBottomOpen(prev => !prev);
     const [gender, setGender] = useState("");
-    const getGender = (event) => setGender(prev=> event);
+    const getGender = (event) => setGender(event);
     const navigate = useNavigate();
     const goToTest = () => navigate("/Test");
  
