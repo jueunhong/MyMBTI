@@ -30,7 +30,8 @@ const Result = () => {
             <h2 className={styles.Title}>당신의 연애 유형 동물은?</h2>
             <h4 className={styles.name}>{name}</h4>
             <img src={img} alt="" width={200} height={200}/>
-            <p className={styles.desc}>{desc}</p>
+            <div className={styles.descBox}><p className={styles.desc}>{desc}</p></div>
+            
         </div>
     )
 }

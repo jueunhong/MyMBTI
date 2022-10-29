@@ -113,6 +113,10 @@ const StyledBottomSheet = styled.div`
   & > form > ul > li {
     cursor: pointer;
   }
+  & > form > ul > li:hover {
+    background-color: rgb(151, 255, 220);
+    border-radius: 15px;
+  }
 
 `;
 
