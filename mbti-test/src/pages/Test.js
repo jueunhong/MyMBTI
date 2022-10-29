@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Test.module.css";
 import {qna} from "./data";
 import { useNavigate } from "react-router-dom";
+import Progress from "./ProgressBar";
 
 
 const Test = () => {
@@ -66,6 +67,7 @@ const Test = () => {
                 ) : 
         (
             <div className={styles.Container}>
+            <Progress num={num}/>
             {qna &&
             <>
                 <h3 className={styles.question}>{question}</h3>
